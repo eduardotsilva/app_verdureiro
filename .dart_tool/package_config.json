@@ -80,6 +80,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "mask_text_input_formatter",
+      "rootUri": "file:///C:/Users/eduar/AppData/Local/Pub/Cache/hosted/pub.dev/mask_text_input_formatter-2.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///C:/Users/eduar/AppData/Local/Pub/Cache/hosted/pub.dev/matcher-0.12.13",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-02-26T19:31:10.550343Z",
+  "generated": "2023-02-26T21:19:27.101138Z",
   "generator": "pub",
   "generatorVersion": "2.19.2"
 }
