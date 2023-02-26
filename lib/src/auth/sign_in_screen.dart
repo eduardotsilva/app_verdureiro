@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:verdureiro/src/auth/components/custom_text_field.dart';
 
@@ -11,12 +12,51 @@ class SignInScreen extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //Nome do app
+                const Text.rich(
+                  TextSpan(
+                    style: TextStyle(
+                      fontSize: 40,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: 'Green',
+                        style: TextStyle(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      TextSpan(
+                        text: 'grocer',
+                        style: TextStyle(color: Colors.redAccent),
+                      ),
+                    ],
+                  ),
+                ),
+
+                //Categorias abaixo nome do app
+                SizedBox(
+                  height: 30,
+                  child: DefaultTextStyle(
+                    style: const TextStyle(fontSize: 25),
+                    child: AnimatedTextKit(
+                      pause: Duration.zero,
+                      repeatForever: true,
+                      animatedTexts: [
+                        FadeAnimatedText('Frutas'),
+                        FadeAnimatedText('Verduras'),
+                        FadeAnimatedText('Carnes'),
+                        FadeAnimatedText('Laticíneos'),
+                      ],
+                    ),
+                  ),
+                )
+              ],
             ),
           ),
+
+          //Formulario
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
             decoration: const BoxDecoration(
@@ -94,9 +134,11 @@ class SignInScreen extends StatelessWidget {
                   height: 50,
                   child: OutlinedButton(
                     style: OutlinedButton.styleFrom(
-                        side: const BorderSide(width: 2, color: Colors.green),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18))),
+                      side: const BorderSide(width: 2, color: Colors.green),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18),
+                      ),
+                    ),
                     onPressed: () {},
                     child: const Text('Criar Conta',
                         style: TextStyle(fontSize: 18)),
